@@ -7,6 +7,7 @@ from llama_index.llms.openai import OpenAI
 
 from src.rag.llamaindex_rag import LlamaindexRAG
 from src.parsers.llama_parser import LlammaParser
+from llama_index.core import SimpleDirectoryReader
 
 load_dotenv()
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
@@ -19,8 +20,12 @@ PERGUNTAS = [
 ]
 
 if __name__ == "__main__":
+    documents = SimpleDirectoryReader(
+        input_files=["data/raw/sample_laudo.pdf"]).load_data()
+    rag = LlamaindexRAG(documents)
+
     llama_parser = LlammaParser()
-    llama_rag = LlamaindexRAG(input_file="data/raw/")
+    llama_rag = LlamaindexRAG(documents)
 
     query_engine = llama_rag.create_query_engine()
 
