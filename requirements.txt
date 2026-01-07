@@ -67,7 +67,6 @@ llama-index-instrumentation==0.4.2
 llama-index-llms-openai==0.6.12
 llama-index-readers-file==0.5.5
 llama-index-readers-llama-parse==0.5.1
-llama-index-vector-stores-chroma==0.4.1
 llama-index-workflows==2.11.5
 llama-parse==0.6.54
 markdown-it-py==3.0.0
@@ -85,7 +84,7 @@ nltk==3.9.2
 numpy==2.0.2
 oauthlib==3.3.1
 onnxruntime==1.19.2
-onnxruntime-silicon==1.16.3
+# onnxruntime-silicon==1.16.3 # Remover - apenas para Mac M1/M2
 openai==2.13.0
 openpyxl==3.1.5
 opentelemetry-api==1.39.1
